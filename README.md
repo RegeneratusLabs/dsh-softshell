@@ -21,10 +21,10 @@ Every group is described on the bundle's page in Plugins. Per-item switches arri
 ## Install
 
 ```sh
-dsh plugin --profile <profile> add dsh-softshell
+dsh plugin --profile <profile> add github:RegeneratusLabs/dsh-softshell
 ```
 
-Then open **Plugins**, find **Softshell** under Installed plugins, and switch it on. For a local checkout:
+Then open **Plugins**, find **Softshell** under Installed plugins, and switch it on. A published npm package (`dsh plugin --profile <profile> add dsh-softshell`) is planned; the git spec above works today, as does a local checkout:
 
 ```sh
 dsh plugin --profile <profile> add ./dsh-softshell
