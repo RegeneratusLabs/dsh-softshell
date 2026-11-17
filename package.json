@@ -1,0 +1,68 @@
+{
+  "name": "dsh-softshell",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A personal surface for DeepSeek Harness: it takes the developer chrome out of the conversation, puts everyday starters on the blank screen, shows web sources as cards, reads answers aloud, and grounds the assistant in the user's time and place.",
+  "type": "module",
+  "icon": "./icon.svg",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json",
+    "./icon.svg": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "icon.svg",
+    "locale",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "personal-assistant",
+    "ui",
+    "personal-surface"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "~4.1.0"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/cordis": {
+      "optional": true
+    }
+  },
+  "dsh": {
+    "manifestVersion": 1,
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-sidebar-right",
+        "@deepseek-ai/dsh-client-ui-chat",
+        "@deepseek-ai/dsh-client-ui-tool"
+      ]
+    }
+  },
+  "scripts": {
+    "test": "node selftest.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RegeneratusLabs/dsh-softshell.git"
+  },
+  "homepage": "https://github.com/RegeneratusLabs/dsh-softshell#readme",
+  "bugs": {
+    "url": "https://github.com/RegeneratusLabs/dsh-softshell/issues"
+  }
+}

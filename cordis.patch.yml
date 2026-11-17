@@ -1,0 +1,22 @@
+# Softshell: one row for the whole personal surface.
+#
+# The row carries the ambient (place/time) configuration; the Web client half
+# registers every conversation surface. A profile's own patch layer may override
+# any field by id:
+#
+#   - id: softshell
+#     config:
+#       place: Testville                 # unset by default: no place, no place line
+#       region: Example Region
+#       timeZone: Europe/Berlin          # IANA name, validated with Intl
+#       units: metric                    # metric (°C, km/h) | imperial (°F, mph)
+#       includeClock: false              # true = show the clock even with no place
+#       weather: true                    # false = register ambient_place only
+#       home: ~/.dsh-assistant           # state root; default: $DSH_HOME, else ~/.dsh-assistant
+#
+# The stored profile lives in $DSH_HOME/ambient/profile.json (0700/0600) and is
+# normally written through the ambient_place tool, which overrides the fields
+# above for any field it has stored.
+- insert:
+    - id: softshell
+      name: 'dsh-softshell'
